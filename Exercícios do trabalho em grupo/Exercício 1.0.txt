@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+
+// Função para codificar a string
+char* codificar(char palavra[], int k) {
+    for (int i = 0; i < strlen(palavra); i++) {
+        palavra[i] += k;
+    }
+    return palavra;
+}
+
+// Função para decodificar a string
+char* decodificar(char palavra[], int k) {
+    for (int i = 0; i < strlen(palavra); i++) {
+        palavra[i] -= k;
+    }
+    return palavra;
+}
+
+int main() {
+    char palavra[100];
+    int k;
+    int opcao;
+
+    printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    printf("Valor k: ");
+    scanf("%d", &k);
+
+    printf("Escolha uma opção:\n");
+    printf("1. Codificar\n");
+    printf("2. Decodificar\n");
+    printf("Opção: ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            printf("Palavra codificada: %s\n", codificar(palavra, k));
+            break;
+        case 2:
+            printf("Palavra decodificada: %s\n", decodificar(palavra, k));
+            break;
+        default:
+            printf("Opção inválida!\n");
+    }
+
+    return 0;
+}

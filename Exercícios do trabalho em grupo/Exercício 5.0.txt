@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+int conta_substring(char string[], char substring[]) {
+    int contador = 0;
+    int i, j;
+
+    for (i = 0; string[i] != '\0'; i++) {
+        for (j = 0; substring[j] != '\0'; j++) {
+            if (string[i + j] != substring[j]) {
+                break;
+            }
+        }
+        if (substring[j] == '\0') {
+            contador++;
+        }
+    }
+
+    return contador;
+}
+
+int main() {
+    char palavra[100];
+    char busca[100];
+
+    printf("Digite uma Palavra: ");
+    scanf("%s", palavra);
+
+    printf("Palavra de Busca: ");
+    scanf("%s", busca);
+
+    int ocorrencias = conta_substring(palavra, busca);
+    printf("A Palavra de Busca ocorre %d vez(es)\n", ocorrencias);
+
+    return 0;
+}
+

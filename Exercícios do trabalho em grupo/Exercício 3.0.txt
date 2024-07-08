@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    char palavra[100];
+    int inicio, fim;
+
+    printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    printf("Digite a posição inicial: ");
+    scanf("%d", &inicio);
+
+    printf("Digite a posição final: ");
+    scanf("%d", &fim);
+
+    printf("Substring: ");
+    for (int i = inicio; i <= fim; i++) {
+        printf("%c", palavra[i]);
+    }
+    printf("\n");
+
+    return 0;
+}

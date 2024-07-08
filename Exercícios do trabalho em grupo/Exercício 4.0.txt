@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+int verifica_substring(char *string, char *substring) {
+    if (strstr(string, substring) != NULL) {
+        return 1; // Substring encontrada
+    } else {
+        return 0; // Substring não encontrada
+    }
+}
+
+int main() {
+	setlocale (LC_ALL, "Portuguese");
+    char palavra[100];
+    char busca[100];
+
+    printf("Digite uma Palavra: ");
+    scanf("%s", palavra);
+
+    printf("Palavra de Busca: ");
+    scanf("%s", busca);
+
+    if (verifica_substring(palavra, busca)) {
+        printf("Palavra de Busca está na String\n");
+    } else {
+        printf("Palavra de Busca não está na String\n");
+    }
+
+    return 0;
+}
